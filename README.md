@@ -91,6 +91,7 @@ python main.py
 - Export data to **CSV** for external processing.
 
 ## **License**
+This project is licensed under the MIT License.
 
 ## **Contributing**
 
