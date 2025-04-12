@@ -3,6 +3,17 @@
 ## **Overview**
 The SecureStack Toolkit is a modular cybersecurity program designed to simplify tasks such as vulnerability scanning, network analysis, reporting, and weak configuration checks. Featuring a user-friendly hybrid menu and threaded processes, it offers a powerful and intuitive solution for securing systems.
 
+## **Table of Contents**
+- [Features](#features)
+- [Dependencies](#dependencies)
+- [Installation](#installation)
+- [Program Structure](#program-structure)
+- [Usage Instructions](#usage-instructions)
+- [Example Workflows](#example-workflows)
+- [License](#license)
+- [Contributing](#contributing)
+- [Acknowledgments](#acknowledgments)
+
 ## **Features**
 ### **1. Vulnerability Scanning**
 - **Mock Scan**: Simulate vulnerabilities using predefined test data.
@@ -91,7 +102,10 @@ python main.py
 - Export data to **CSV** for external processing.
 
 ## **License**
-This project is licensed under the MIT License.
+This project is licensed under the MIT License. This means:
+- You are free to use, modify, and distribute the code.
+- Proper attribution is required.
+See the [LICENSE](LICENSE) file for more details.
 
 ## **Contributing**
 
