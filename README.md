@@ -61,7 +61,7 @@ Ensure these tools are installed on your system:
 ## **Installation**
 To install the required Python packages, run:
 ```bash
-pip install requests nmap matplotlib
+pip install -r requirements.txt
 ```
 
 ## **Program Structure**
