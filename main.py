@@ -1,10 +1,12 @@
-﻿from data_fetching import list_installed_software_real, fetch_cve_data_mock, fetch_cve_data_real
+﻿from ipaddress import ip_address
+from data_fetching import list_installed_software_real, fetch_cve_data_mock, fetch_cve_data_real
 from visual_ascii import display_ascii_report
 from visual_html import generate_html_report
 from visual_csv import generate_csv_report
 from visual_chart import generate_chart
 from network_scanning import scan_open_ports, perform_nmap_scan
 from weak_configuration_checks import check_http_headers, check_ssh_credentials, check_ftp_credentials
+from dns_analysis import dns_lookup, reverse_dns_lookup, query_dns_record
 
 
 def main():
@@ -84,8 +86,9 @@ def main():
             print("1. Basic Port Scan (Socket)")
             print("2. Advanced Nmap Scan")
             print("3. Weak Configuration Checks")
-            print("4. Back to Main Menu")
-            network_choice = input("Select an option (1–4): ")
+            print("4. DNS Analysis")
+            print("5. Back to Main Menu")
+            network_choice = input("Select an option (1–5): ")
 
             if network_choice == "1":
                 target_ip = input("Enter the target IP for port scan: ")
@@ -115,6 +118,23 @@ def main():
                     username = input("Enter username (default: anonymous): ") or "anonymous"
                     password = input("Enter password (default: anonymous): ") or "anonymous"
                     check_ftp_credentials(target_ip, username, password)
+            elif network_choice == "4":
+                print("\nDNS Analysis")
+                print("1. DNS Lookup - Get IP address of a domain.")
+                print("2. Reverse DNS Lookup - Get the domain name of an IP address.")
+                print("3. Query Specific DNS Records.")
+                
+                dns_choice = input("Select an option (1-3): ")
+                if dns_choice == "1":
+                    domain = input("Enter a domain (e.g., example.com): ")
+                    print(dns_lookup(domain))
+                elif dns_choice == "2":
+                    ip_address = input("Enter an IP address (e.g., 8.8.8.8): ")
+                    print(reverse_dns_lookup(ip_address))
+                elif dns_choice == "3":
+                    domain = input("Enter a domain (e.g., example.com): ")
+                    record_type = input("Enter record type (e.g., A, MX, CNAME): ").upper()
+                    print(query_dns_record(domain, record_type))
 
         elif choice == "4":
             print("Exiting Vulnerability Scanner. Goodbye!")
