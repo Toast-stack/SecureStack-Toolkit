@@ -1,0 +1,4 @@
+requests
+nmap
+dnspython
+matplotlib
